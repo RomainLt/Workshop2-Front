@@ -20,8 +20,9 @@
             </div>
             <div class="collapse navbar-collapse" id="top-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#Board">Jeu</a></li>
-                    <li><a href="#Rules">Rules</a></li>
+                    <li><a href="#board">Plateau</a></li>
+                    <li><a href="#data">Données</a></li>
+                    <li><a href="#rules">Règles</a></li>
                 </ul>
             </div>
         </div>
@@ -68,6 +69,20 @@
                     </table>
                 </div>
     </section>
+
+    <section id="rules">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" id="section-title">
+                    <table border=1>
+                        <div>
+                            <h4>Règles</h4>
+                            <p>Bla bla bla</p>
+                            <p>Bla bla bla</p>
+                        </div>
+                    </table>
+                </div>
+    </section>
 </body>
 
 <!-- Scripts -->
@@ -75,6 +90,32 @@
 <script src="js/angular-resource.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+    //Jquery animations
+    $(document).on('click', '.navbar-collapse.in', function(e) {
+        if ($(e.target).is('a')) {
+            $(this).collapse('hide');
+        }
+    });
+    $('.nav li a').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        var offsetTop = $(target).offset().top - 50;
+        $('html, body').animate({
+            scrollTop: offsetTop
+        }, 1000);
+    });
+
+    $(document).scroll(function() {
+        var y = $(this).scrollTop();
+        if (y > 1000) {
+            $('.div-return-top').fadeIn();
+        } else {
+            $('.div-return-top').fadeOut();
+        }
+    });
+</script>
 
 <!-- Chrono -->
 <!--<script type="text/javascript">
