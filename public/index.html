@@ -19,71 +19,39 @@
                 </button>
                 <span class="navbar-brand" id="logo">Ch'ar Pente</span>
             </div>
-            <div class="collapse navbar-collapse" id="top-navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#board">Plateau</a></li>
-                    <li><a href="#data">Données</a></li>
-                    <li><a href="#rules">Règles</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
     <section id="play" class="section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12" id="section-title">
+                <div class="col-lg-12" id="title">
                     <h1>Plateau de jeu</h1>
                 </div>
-                <!--<div class="col-lg-12" id="section-content">
-                    <p>Temps écoulé depuis le début : <span id="chrono">0</span> secondes.</p>
-                    <p>Temps restant pour jouer son tour : <span id="decompte">10</span> secondes.</p>
-                </div>-->
                 <div class="col-lg-12" id="back-board">
-                    <div id="board"></div>
+                    <div class="col-md-3" id="data">
+                        <h4>Données de la partie</h4>
+                        <p>Tenailles J1 : {{mydata.nbTenaillesJ1}}</p>
+                        <p>Tenailles J2 : {{mydata.nbTenaillesJ2}}</p>
+                        <p>Dernier coup : {{mydata.dernierCoupX}}, {{mydata.dernierCoupY}}</p>
+                        <p>Prolongation : {{mydata.prolongation}}</p>
+                        <p>Fin de la partie : {{mydata.finPartie}}</p>
+                        <p>Détail fin de partie : {{mydata.detailFinPartie}}</p>
+                        <p>Tour numéro : {{mydata.numTour}}</p>
+                        <p>Réponse HTTP : {{mydata.code}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="board"></div>
+                    </div>
+                    <div class="col-md-3" id="rules">
+                        <h4>Règles</h4>
+                        <p>Chaque joueur dispose joue tour par tour et essaie d'alligner 5 pions, en ligne, à la verticale ou en diagonale.</p>
+                        <p>Une partie dure au maximum 10 minutes, chaque coup dure 10 secondes au maximum.</p>
+                        <p>Le joueur peut aussi gagner en faisant des "tenailles" à l'autre joueur.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="data">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2" id="section-title">
-                    <table border=1>
-                        <div>
-                            <h4>Données de la partie</h4>
-                            <!--<p>Tour : {{data.status}} (0 : Joueur1 , 1 : Joueur2)</p>-->
-                            <p>Tenailles J1 : {{mydata.nbTenaillesJ1}}</p>
-                            <p>Tenailles J2 : {{mydata.nbTenaillesJ2}}</p>
-                            <p>Dernier coup : {{mydata.dernierCoupX}}, {{mydata.dernierCoupY}}</p>
-                            <p>Prolongation : {{mydata.prolongation}}</p>
-                            <p>Fin de la partie : {{mydata.finPartie}}</p>
-                            <p>Détail fin de partie : {{mydata.detailFinPartie}}</p>
-                            <p>Tour numéro : {{mydata.numTour}}</p>
-                            <p>Réponse HTTP : {{mydata.code}}</p>
-                            <!--<h4>Tableau</h4>
-                            <div ng-repeat="tab in data.tableau">
-                                X : {{tab.ligne}} Y : {{tab.colonne}} Case : {{tab.case}}
-                            </div>-->
-                        </div>
-                    </table>
-                </div>
-    </section>
-
-    <section id="rules">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2" id="section-title">
-                    <table border=1>
-                        <div>
-                            <h4>Règles</h4>
-                            <p>Chaque joueur dispose joue tour par tour et essaie d'alligner 5 pions, en ligne, à la verticale ou en diagonale.</p>
-                            <p>Une partie dure au maximum 10 minutes, chaque coup dure 10 secondes au maximum.</p>
-                            <p>Le joueur peut aussi gagner en faisant des "tenailles" à l'autre joueur.</p>
-                        </div>
-                    </table>
-                </div>
     </section>
 </body>
 
