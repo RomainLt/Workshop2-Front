@@ -71,6 +71,6 @@ app.controller('homeController', function($scope, $http, $q, $timeout) {
             }
             view.init(document.querySelector('#board'));
         });
-        timer = $timeout(refresh, 50000);
+        timer = $timeout(refresh, 500);
     }, 500);
 });
