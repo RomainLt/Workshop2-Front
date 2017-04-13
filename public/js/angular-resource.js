@@ -10,7 +10,7 @@ app.controller('homeController', function($scope, $http, $q, $timeout) {
     var list;
 
     var b = 0;
-
+    
     var timer = $timeout(function refresh() {
         $http.get('http://workshop2.cleverapps.io/turn/1').success(function(response) {
             $scope.mydata = response;
@@ -19,7 +19,6 @@ app.controller('homeController', function($scope, $http, $q, $timeout) {
             // console.log(list);
             defer.resolve();
         });
-
 
 
         defer.promise.then(function success() {
@@ -39,7 +38,7 @@ app.controller('homeController', function($scope, $http, $q, $timeout) {
                     if (lignes) this.n = lignes;
                     if (colonnes) this.m = colonnes;
 
-                    t = document.createElement('table');
+                    var t = document.createElement('table');
                     t.id = 'plateau';
 
                     for (var i = 0; i < this.n; i++) {
@@ -47,6 +46,7 @@ app.controller('homeController', function($scope, $http, $q, $timeout) {
                         this.board[i] = [];
                         for (var j = 0; j < this.m; j++) {
                             var td = document.createElement('td');
+                            td.setAttribute('onmouseover', 'coordinate(this)');
                             td.dataset.column = j;
                             tr.appendChild(td);
                             this.board[i][j] = td;
@@ -71,6 +71,6 @@ app.controller('homeController', function($scope, $http, $q, $timeout) {
             }
             view.init(document.querySelector('#board'));
         });
-        timer = $timeout(refresh, 500);
+        timer = $timeout(refresh, 50000);
     }, 500);
 });

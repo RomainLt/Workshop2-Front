@@ -85,6 +85,15 @@
             $('.div-return-top').fadeOut();
         }
     });
+        
+    function coordinate(cell){
+        var rowIndex = $(cell)
+            .closest('tr') // Get the closest tr parent element
+            .prevAll() // Find all sibling elements in front of it
+            .length; // G
+        console.log(cell.cellIndex + " " + rowIndex);
+    }
+    
 </script>
 
 <!-- Chrono -->

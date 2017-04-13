@@ -42,3 +42,6 @@
     background-size: contain;
     z-index: 1;
 }
+tr td:hover{
+    background: yellow;
+}
